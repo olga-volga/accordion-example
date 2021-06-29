@@ -54,15 +54,19 @@ body {
 	background-color: #eee;
 	padding: 20px;
 	cursor: pointer;
+	&:hover {
+		background-color: #ccc;
+	}
 }
 .accordion__heading {
-	font-size: 24px;
+	font-size: 22px;
 	font-weight: bold;
-	color: #444;
+	color: #555;
 }
 .accordion__symbol {
 	font-size: 24px;
 	font-weight: bold;
+	color: #555;
 }
 .accordion-item__text {
 	display: none;

@@ -2,22 +2,31 @@
 
 window.addEventListener('DOMContentLoaded', () => {
 
-	const heading = document.querySelector('.accordion-item__heading'),
-		  dropText = document.querySelector('.accordion-item__text'),
-		  symbol = document.querySelector('.accordion__symbol');
+	const heading = document.querySelectorAll('.accordion-item__heading'),
+		  dropText = document.querySelectorAll('.accordion-item__text'),
+		  symbol = document.querySelectorAll('.accordion__symbol');
 
-	function toggleDropContent() {
-		dropText.classList.toggle('show');
-		heading.classList.toggle('active');
+	function showDropContent(i) {
+		dropText[i].classList.toggle('show');
+		heading[i].classList.toggle('active');
 
-		if (dropText.classList.contains('show')) {
-			symbol.innerHTML = '&minus;';
+		if (dropText[i].classList.contains('show')) {
+			symbol[i].innerHTML = '&minus;';
 		} else {
-			symbol.innerHTML = '&plus;';
-		}
-		
+			symbol[i].innerHTML = '&plus;';
+		}	
 	}
 
-	heading.addEventListener('click', toggleDropContent);
+	heading.forEach((item, i) => {
+		item.addEventListener('click', (e) => {
+			if (e.target && e.target.classList.contains('accordion-item__heading')) {
+				dropText.forEach(() => {
+					if (e.target == item) {
+						showDropContent(i);
+					}
+				});
+			}
+		});
+	});
 
 });
