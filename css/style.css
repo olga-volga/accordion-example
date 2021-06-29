@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*Обнуление*/
-@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -68,21 +68,6 @@ body {
   font-size: 16px;
   line-height: 20px; }
 
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  width: 100%; }
-  @media (max-width: 1200px) {
-    .container {
-      max-width: 800px; } }
-  @media (max-width: 991.98px) {
-    .container {
-      max-width: none;
-      padding: 0px 40px; } }
-  @media (max-width: 426px) {
-    .container {
-      padding: 0px 20px; } }
-
 .wrapper {
   max-width: 600px;
   margin: 0 auto; }
@@ -100,22 +85,17 @@ body {
   .accordion-item__heading:hover {
     background-color: #ccc; }
 
-.accordion__heading {
-  font-size: 22px;
-  font-weight: bold;
-  color: #555; }
-
-.accordion__symbol {
-  font-size: 24px;
-  font-weight: bold;
-  color: #555; }
-
 .accordion-item__text {
   display: none;
   padding: 20px; }
 
-.show {
+.accordion__heading, .accordion__symbol {
+  font-size: 22px;
+  font-weight: bold;
+  color: #555; }
+
+.accordion .show {
   display: block; }
 
-.active {
+.accordion .active {
   background-color: #ccc; }
