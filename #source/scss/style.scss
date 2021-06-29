@@ -1,0 +1,76 @@
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>
+@import "nullstyle.scss";
+//====================================================
+//<ШРИФТЫ>
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+/*font-family: 'PT Sans', sans-serif;*/
+//====================================================
+//<ПЕРЕМЕННЫЕ>
+$minw: 320;
+$maxw: 900;//изменить в соответствии с макетом!
+$md1: 991.98;
+$md2: 780;
+$md3: 767.98;
+$md4: 575.98;
+$md5: 479.98;
+$md6: 426;
+$md7: 375;
+//====================================================
+//<МИКСИНЫ>
+@mixin flexbox() {display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;}
+@mixin flexorder($fz) {-webkit-order: $fz;-moz-order: $fz;order: $fz;}
+//====================================================
+//<ОСНОВНАЯ СЕТКА>
+body {
+	font-family: 'PT Sans', sans-serif;
+	font-size: 16px;
+	line-height: 20px;
+}
+.container {
+	max-width: $maxw+px;
+	margin: 0 auto;
+	width: 100%;
+	@media (max-width: 1200px) {
+		max-width: 800px;
+	}
+	@media (max-width: $md1+px) {
+		max-width: none;
+		padding: 0px 40px;
+	}
+	@media (max-width: $md6+px) {
+		padding: 0px 20px;
+	}
+}
+.wrapper {
+	max-width: 600px;
+	margin: 0 auto;
+}
+.accordion {}
+.accordion-body {}
+.accordion-body__item {}
+.accordion-item__heading {
+	display: flex;
+	justify-content: space-between;
+	background-color: #eee;
+	padding: 20px;
+	cursor: pointer;
+}
+.accordion__heading {
+	font-size: 24px;
+	font-weight: bold;
+	color: #444;
+}
+.accordion__symbol {
+	font-size: 24px;
+	font-weight: bold;
+}
+.accordion-item__text {
+	display: none;
+	padding: 20px;
+}
+.show {
+	display: block;
+}
+.active {
+	background-color: #ccc;
+}
