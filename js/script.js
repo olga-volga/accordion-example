@@ -20,11 +20,9 @@ window.addEventListener('DOMContentLoaded', () => {
 	heading.forEach((item, i) => {
 		item.addEventListener('click', (e) => {
 			if (e.target && e.target.classList.contains('accordion-item__heading')) {
-				dropText.forEach(() => {
-					if (e.target == item) {
-						showDropContent(i);
-					}
-				});
+				if (e.target == item) {
+					showDropContent(i);
+				}
 			}
 		});
 	});
